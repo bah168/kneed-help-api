@@ -21,7 +21,7 @@ KNEED_HELP_MODULE_ROUTES = {
 
 BODY_PARTS = {
 
-    "1": "Knee"
+    "1": {"name": "Knee", "image_name": "892d7ab4-50de-11e9-b34d-32001087a000.jpg", "active": True}
 }
 
 BODY_SUBPARTS = {

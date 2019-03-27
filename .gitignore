@@ -1,3 +1,3 @@
 venv/
 .idea/
-instance/
+instance/development_app.db
