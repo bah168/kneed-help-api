@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1afcad0-3fc9-4a00-9624-67d7ba0199bd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="symptoms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/kneed_help/models/symptoms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
+            <state relative-caret-position="210">
               <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding>
                 <element signature="e#34#89#0" expanded="true" />
@@ -210,35 +210,6 @@
               <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
-              <item name="instance" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="extensions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="kneed_help" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Fitness_app_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Fitness_app_api" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="kneed_help" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -372,7 +343,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32777777" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2345679" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.767507" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.57563025" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28682926" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -380,14 +351,28 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28682926" />
+      <window_info anchor="right" id="SciView" order="5" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2345679" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.767507" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32777777" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,9 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#28#83#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -555,9 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="53" />
-          <folding>
-            <element signature="e#21#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -623,9 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding>
-            <element signature="e#33#62#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -677,12 +653,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.id_rsa.pub.swp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.id_rsa.pub.swp" />
     <entry file="file://$PROJECT_DIR$/modules/kneed_help/models/symptoms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
+        <state relative-caret-position="210">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="e#34#89#0" expanded="true" />
