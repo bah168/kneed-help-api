@@ -1,0 +1,27 @@
+<script>
+    $(document).ready(function () {
+        let $tokenInputColumn = $("input#token").parent();
+        let resetButton = `
+        <button type='button' id='resetButton' class='form-control btn btn-primary'>
+            Reset Token
+        </button>
+        `;
+        $tokenInputColumn.append(resetButton);
+        $("#resetButton").click(function () {
+            $.ajax({
+                url: "{{ url_for("servicemodel.get_new_token") }}",
+                method: "POST",
+                data: {
+                    "service_name": $("input#name").val(),
+                    "expire_token_in": $("input#expire_token_in").val()
+                },
+                success: function (json, status) {
+                    if (status === "success") {
+                        $("input#token").val(json.token);
+                    }
+                }
+            });
+        });
+
+    });
+</script>

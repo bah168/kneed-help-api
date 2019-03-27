@@ -1,0 +1,35 @@
+import os
+
+KNEED_HELP_IMAGES_DIR = os.path.abspath("instance/images/kneed_help")
+
+KNEED_HELP_MODULE_ROUTES = {
+
+    "BodyPartsList": {
+        "url": "/api/body_parts",
+        "methods": {
+            "GET": "get all"
+        }
+    },
+    "BodySubpartForBodyPart": {
+        "url": "/api/sub_parts",
+        "methods": {
+            "GET": "get all subparts for one body part"
+        }
+    }
+}
+
+
+BODY_PARTS = {
+
+    "1": "Knee"
+}
+
+BODY_SUBPARTS = {
+
+    "1": {"name": "IT Band", "coordinates": None, "active": True, "body_part_id": 1},
+    "2": {"name": "Outside of Knee", "coordinates": None, "active": True, "body_part_id": 1},
+    "3": {"name": "Below Knee Cap", "coordinates": None, "active": True, "body_part_id": 1},
+    "4": {"name": "Inside of Knee", "coordinates": None, "active": True, "body_part_id": 1},
+    "5": {"name": "Knee Cap", "coordinates": None, "active": True, "body_part_id": 1},
+    "6": {"name": "Above Knee Cap", "coordinates": None, "active": True, "body_part_id": 1}
+}
