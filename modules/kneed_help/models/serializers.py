@@ -14,4 +14,5 @@ class BodySubpartSchema(ModelSchema):
 
 
 body_parts_schema = BodyPartSchema(many=True)
+body_part_schema = BodyPartSchema()
 body_subparts_schema = BodySubpartSchema(many=True)

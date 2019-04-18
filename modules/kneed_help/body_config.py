@@ -7,13 +7,25 @@ KNEED_HELP_MODULE_ROUTES = {
     "BodyPartsList": {
         "url": "/api/body_parts",
         "methods": {
-            "GET": "get all"
+            "GET": "get all",
+        }
+    },
+    "BodyPart": {
+        "url": "/api/body_part",
+        "methods": {
+            "GET": "get one"
         }
     },
     "BodySubpartForBodyPart": {
         "url": "/api/sub_parts",
         "methods": {
             "GET": "get all subparts for one body part"
+        }
+    },
+    "BodyPartImage": {
+        "url": "/api/image/<string:image_name>",
+        "methods": {
+            "GET": "get image"
         }
     }
 }
