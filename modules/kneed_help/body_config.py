@@ -15,7 +15,14 @@ KNEED_HELP_MODULE_ROUTES = {
         "methods": {
             "GET": "get all subparts for one body part"
         }
+    },
+    "ContactUs": {
+        "url": "/api/contact_us",
+        "methods": {
+            "Post": "posting email"
+        }
     }
+
 }
 
 
