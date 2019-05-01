@@ -58,9 +58,14 @@ class BodySubpartsView(BaseView):
 
 
 class ConditionsView(BaseView):
-    column_list = ('name', 'active', 'subparts')
-    form_create_rules = ('name', 'subparts', 'active')
-    form_edit_rules = ('name', 'subparts', 'active')
+    column_list = ('name', 'active', 'subparts', 'symptoms')
+    form_create_rules = ('name', 'subparts', 'symptoms', 'active')
+    form_edit_rules = ('name', 'subparts', 'symptoms', 'active')
     column_searchable_list = ('name', )
     column_labels = dict(subparts='Pain Location')
+
+class SymptomsView(BaseView):
+    form_create_rules = ('name', 'conditions', 'active')
+    form_edit_rules = ('name', 'conditions', 'active')
+    column_searchable_list = ('name', )
 

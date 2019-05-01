@@ -91,3 +91,4 @@ with app.app_context():
 app.register_blueprint(security_bp)
 
 """ Register routes for modules """
+import modules.security.routes

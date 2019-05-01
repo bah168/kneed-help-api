@@ -70,6 +70,66 @@ def seed():
         print(e)
         print('Subparts records already exist in database.')
 
+    try:
+        conditions = app.config.get("CONDITIONS")
+        conditions_model = get_class_by_tablename("conditions")
+
+        current_records = conditions_model.query.all()
+
+        if current_records:
+            for key, value in conditions.items():
+                if not conditions_model.find(key):
+                    conditions_model.create(id=key,
+                                            name=value['name'],
+                                            active=value['active']
+                                            )
+
+        else:
+            for key, value in conditions.items():
+                conditions_model.create(id=key,
+                                        name=value['name'],
+                                        active=value['active']
+                                        )
+        try:
+            conditions_model.session.commit()
+        except IntegrityError as err:
+            print("Error seeding the database: ", err)
+
+    except Exception as e:
+        conditions_model.session.rollback()
+        print(e)
+        print('Condition records already exist in database.')
+
+    try:
+        subpart_condition_relation = app.config.get("SUBPARTS_CONDITION_RELATION")
+        subpart_condition_relation_model = get_class_by_tablename("subparts_conditions_relationship")
+
+        current_records = subpart_condition_relation_model.query.all()
+
+        if current_records:
+            for key, value in subpart_condition_relation.items():
+                if not subpart_condition_relation_model.find(key):
+                    subpart_condition_relation_model.create(id=key,
+                                                            subpart_id=value['subpart_id'],
+                                                            condition_id=value['condition_id']
+                                                            )
+
+        else:
+            for key, value in subpart_condition_relation.items():
+                subpart_condition_relation_model.create(id=key,
+                                                        subpart_id=value['subpart_id'],
+                                                        condition_id=value['condition_id']
+                                                        )
+        try:
+            subpart_condition_relation_model.session.commit()
+        except IntegrityError as err:
+            print("Error seeding the database: ", err)
+
+    except Exception as e:
+        subpart_condition_relation_model.session.rollback()
+        print(e)
+        print('Subpart and condition relation records already exist in database.')
+
 
 
 
