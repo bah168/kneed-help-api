@@ -12,6 +12,7 @@ from modules.extensions import BaseModel
 from .admin_views import ExtendedRegisterForm, ExtendedLoginForm
 from .models import User
 
+
 security_bp = Blueprint('security_bp', __name__)
 security_api = Api(security_bp)
 
@@ -47,6 +48,8 @@ def create_user():
             last_name='Admin'
         )
         user.session.commit()
+
+
 
 
 # set a newly registered user account to inactive and redirect to homepage
@@ -91,3 +94,4 @@ with app.app_context():
 app.register_blueprint(security_bp)
 
 """ Register routes for modules """
+import modules.security.routes

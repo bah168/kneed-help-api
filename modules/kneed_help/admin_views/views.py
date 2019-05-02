@@ -6,6 +6,8 @@ from werkzeug.utils import secure_filename
 from flask_admin import form, expose
 from flask import send_from_directory, current_app, abort, url_for
 from werkzeug.exceptions import BadRequest
+from flask_admin.contrib.sqla import ModelView
+from flask_security import current_user
 from jinja2 import Markup
 
 from modules import app
@@ -58,9 +60,22 @@ class BodySubpartsView(BaseView):
 
 
 class ConditionsView(BaseView):
-    column_list = ('name', 'active', 'subparts')
-    form_create_rules = ('name', 'subparts', 'active')
-    form_edit_rules = ('name', 'subparts', 'active')
+    column_list = ('name', 'active', 'description', 'subparts', 'symptoms', 'suggestions')
+    form_create_rules = ('name', 'description', 'subparts', 'symptoms', 'active', 'suggestions')
+    form_edit_rules = ('name', 'description', 'subparts', 'symptoms', 'active', 'suggestions')
     column_searchable_list = ('name', )
     column_labels = dict(subparts='Pain Location')
+
+class SymptomsView(BaseView):
+    form_create_rules = ('name', 'conditions', 'active')
+    form_edit_rules = ('name', 'conditions', 'active')
+    column_searchable_list = ('name', )
+
+class SuggestionView(BaseView):
+    column_list = ('name', 'description', 'link', 'video_start', 'video_end', 'conditions', 'active')
+    form_create_rules = ('name', 'description', 'link', 'video_start', 'video_end', 'conditions', 'active')
+    form_edit_rules = ('name', 'description', 'link', 'video_start', 'video_end', 'conditions', 'active')
+    column_labels = dict(video_start='Video Start Time (sec)', video_end='Video End Time (sec)')
+
+
 

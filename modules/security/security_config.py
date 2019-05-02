@@ -1,5 +1,21 @@
 import os
 
+SECURITY_MODULE_ROUTES = {
+
+    "Authorize": {
+        "url": "/api/security/get-token",
+        "methods": {
+            "GET": "get all",
+        }
+    },
+    "RefreshToken": {
+        "url": "/api/security/refresh-token",
+        "methods": {
+            "GET": "get one"
+        }
+    }
+
+}
 
 # Flask-Security config
 SECURITY_URL_PREFIX = os.getenv("SECURITY_URL_PREFIX", "/admin")
