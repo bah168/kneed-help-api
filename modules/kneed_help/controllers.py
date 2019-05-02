@@ -1,7 +1,8 @@
 from flask_restful import Resource, reqparse
 from flask import jsonify, send_from_directory, current_app, abort
-from .models.serializers import body_parts_schema, body_subparts_schema, body_part_schema, symptoms_schema, results_schema
-from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel
+from .models.serializers import body_parts_schema, body_subparts_schema, body_part_schema, symptoms_schema, \
+    results_schema, condition_schema, suggestions_schema
+from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel, SuggestionsModel
 from sqlalchemy_pagination import paginate
 from sqlalchemy.exc import DatabaseError
 
@@ -99,6 +100,16 @@ class ResultList(Resource):
 
     def post(self):
 
+        results = ResultsModel.query.all()
+
+        if results:
+            ResultsModel.query.delete()
+            try:
+                ResultsModel.session.commit()
+            except DatabaseError:
+                return abort(500, 'An error occurred while adding this record.')
+
+
         subpart = SubpartsModel.query.filter(SubpartsModel.id == self.args['subpart_id']).first()
 
         for condition in subpart.conditions:
@@ -108,32 +119,51 @@ class ResultList(Resource):
 
             matches = set(all_symptoms).intersection(self.args['symptom_ids'])
 
-            ResultsModel.create(
-                user_id=self.args["user_id"],
-                condition_id=condition.id,
-                condition_name=condition.name,
-                matches=len(matches)
-            )
+            if len(matches) > 0:
 
-            try:
-                ResultsModel.session.commit()
-            except DatabaseError:
-                return abort(500, 'An error occurred while adding this record.')
+                ResultsModel.create(
+                    user_id=self.args["user_id"],
+                    condition_id=condition.id,
+                    condition_name=condition.name,
+                    condition_description=condition.description,
+                    matches=len(matches)
+                 )
+
+                try:
+                    ResultsModel.session.commit()
+                except DatabaseError:
+                    return abort(500, 'An error occurred while adding this record.')
 
         return {'message': 'Results processed.'}, 201
 
     def get(self):
         results = ResultsModel.query.filter(ResultsModel.user_id == self.args['user_id']).order_by(ResultsModel.matches.desc())
+        results_count = results.count()
         results = paginate(results, self.args['page'], self.args['per_page'])
 
-        ResultsModel.query.delete()
+        return jsonify(results=results_schema.dump(results.items).data,
+                       count=results_count)
 
-        try:
-            ResultsModel.session.commit()
-        except DatabaseError:
-            return abort(500, 'An error occurred while deleting this record.')
 
-        return jsonify(results=results_schema.dump(results.items).data)
+class OneResult(Resource):
+
+    def __init__(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('condition_id', type=int)
+        self.args = parser.parse_args()
+        super().__init__()
+
+    def get(self):
+
+        condition = ConditionsModel.query.filter(ConditionsModel.id == self.args['condition_id']).first()
+
+        suggestions = condition.suggestions
+
+        symptoms = condition.symptoms
+
+        return jsonify(condition=condition_schema.dump(condition).data,
+                       suggestions=suggestions_schema.dump(suggestions).data,
+                       symptoms=symptoms_schema.dump(symptoms).data)
 
 
 class BodyPartImage(Resource):

@@ -10,6 +10,7 @@ class ResultsModel(BaseModel):
     user_id = Column('user_id', Integer, nullable=False)
     condition_id = Column('condition_id', Integer)
     condition_name = Column('condition_name', String(80), default=True)
+    condition_description = Column('condition_desc', String(120))
     matches = Column('matches', Integer, default=True)
 
     def __str__(self):

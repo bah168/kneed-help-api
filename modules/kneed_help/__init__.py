@@ -43,6 +43,13 @@ with app.app_context():
             name='Symptoms', category='Conditions'
         )
     )
+    admin.add_view(
+        admin_views.SuggestionView(
+            models.SuggestionsModel,
+            models.SuggestionsModel.session,
+            name='Suggestions', category='Conditions'
+        )
+    )
 
 
 app.register_blueprint(kneed_help_bp)

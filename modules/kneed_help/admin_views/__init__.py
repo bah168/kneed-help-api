@@ -1,1 +1,2 @@
-from .views import BodyPartsView, BodySubpartsView, ConditionsView, SymptomsView
+from .views import BodyPartsView, BodySubpartsView, ConditionsView, SymptomsView,\
+    SuggestionView

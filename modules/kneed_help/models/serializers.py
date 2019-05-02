@@ -4,6 +4,7 @@ from .subparts import SubpartsModel
 from .symptoms import SymptomsModel
 from .conditions import ConditionsModel
 from .results import ResultsModel
+from .suggestions import SuggestionsModel
 from marshmallow_sqlalchemy import ModelSchema
 
 
@@ -31,10 +32,16 @@ class ResultsSchema(ModelSchema):
     class Meta:
         model = ResultsModel
 
+class SuggestionsSchema(ModelSchema):
+    class Meta:
+        model = SuggestionsModel
+
 
 body_parts_schema = BodyPartSchema(many=True)
 body_part_schema = BodyPartSchema()
 body_subparts_schema = BodySubpartSchema(many=True)
 symptoms_schema = SymptomsSchema(many=True)
 conditions_schema = ConditionsSchema(many=True)
+condition_schema = ConditionsSchema()
 results_schema = ResultsSchema(many=True)
+suggestions_schema = SuggestionsSchema(many=True)
