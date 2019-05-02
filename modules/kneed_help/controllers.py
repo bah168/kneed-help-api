@@ -2,9 +2,11 @@ from flask_restful import Resource, reqparse
 from flask import jsonify, send_from_directory, current_app, abort
 from .models.serializers import body_parts_schema, body_subparts_schema, body_part_schema, symptoms_schema, \
     results_schema, condition_schema, suggestions_schema
-from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel, SuggestionsModel
+from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel, ContactModel
 from sqlalchemy_pagination import paginate
 from sqlalchemy.exc import DatabaseError
+from flask_mail import Message
+from modules.extensions import mail
 
 
 class BodyPartsList(Resource):
@@ -164,6 +166,35 @@ class OneResult(Resource):
         return jsonify(condition=condition_schema.dump(condition).data,
                        suggestions=suggestions_schema.dump(suggestions).data,
                        symptoms=symptoms_schema.dump(symptoms).data)
+
+
+class ContactUs(Resource):
+
+    def __init__(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('email', type=str)
+        parser.add_argument('message', type=str)
+        parser.add_argument('name', type=str)
+        self.args = parser.parse_args()
+        super().__init__()
+
+    def post(self):
+
+        message = "<div>Name: " + self.args['name'] + "</div>" + "<div>Email: " + \
+                  self.args['email'] + "</div>" + "<div>" + self.args['message'] + "</div>"
+
+
+        msg = Message("Kneed Help Contact us",
+                      recipients=['kneedhelpapp@gmail.com'])
+
+        msg.html = message
+
+        try:
+            mail.send(msg)
+        except:
+            return abort(500, "An error occurred while sending email.")
+
+        return {'message': 'Email has been sent.'}
 
 
 class BodyPartImage(Resource):

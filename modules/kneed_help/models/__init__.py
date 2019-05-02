@@ -4,4 +4,5 @@ from .conditions import ConditionsModel, conditions_suggestions_relationship, co
 from .symptoms import SymptomsModel
 from .results import ResultsModel
 from .suggestions import SuggestionsModel
+from .contact import ContactModel
 

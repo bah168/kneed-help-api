@@ -50,6 +50,13 @@ with app.app_context():
             name='Suggestions', category='Conditions'
         )
     )
+    admin.add_view(
+        admin_views.ContactView(
+            models.ContactModel,
+            models.ContactModel.session,
+            name='Contact Info', category="Contact"
+        )
+    )
 
 
 app.register_blueprint(kneed_help_bp)

@@ -11,6 +11,7 @@ from modules import admin, app
 from modules.extensions import BaseModel
 from .admin_views import ExtendedRegisterForm, ExtendedLoginForm
 from .models import User
+from modules.kneed_help.models.contact import ContactModel
 
 security_bp = Blueprint('security_bp', __name__)
 security_api = Api(security_bp)
@@ -47,6 +48,15 @@ def create_user():
             last_name='Admin'
         )
         user.session.commit()
+
+@app.before_first_request
+def create_contact():
+    # Create the Admin user if not created
+    if not ContactModel.find(1):
+         ContactModel.create(
+             email="<noreply@example.com>"
+         )
+         ContactModel.session.commit()
 
 
 # set a newly registered user account to inactive and redirect to homepage
