@@ -105,34 +105,98 @@ CONDITIONS = {
 
 }
 
+
 SUBPARTS_CONDITION_RELATION = {
     "1": {"subpart_id": 1, "condition_id": 1},
-    "2": {"subpart_id": 2, "condition_id": 1},
-    "3": {"subpart_id": 2, "condition_id": 2},
-    "4": {"subpart_id": 2, "condition_id": 3},
-    "5": {"subpart_id": 3, "condition_id": 4},
-    "6": {"subpart_id": 3, "condition_id": 5},
-    "7": {"subpart_id": 3, "condition_id": 6},
-    "8": {"subpart_id": 4, "condition_id": 7},
-    "9": {"subpart_id": 4, "condition_id": 8},
-    "10": {"subpart_id": 4, "condition_id": 9},
-    "11": {"subpart_id": 4, "condition_id": 10},
-    "12": {"subpart_id": 4, "condition_id": 11},
-    "13": {"subpart_id": 4, "condition_id": 12},
-    "14": {"subpart_id": 4, "condition_id": 13},
-    "15": {"subpart_id": 4, "condition_id": 14},
-    "16": {"subpart_id": 4, "condition_id": 15},
-    "17": {"subpart_id": 5, "condition_id": 16},
-    "18": {"subpart_id": 5, "condition_id": 17},
-    "19": {"subpart_id": 5, "condition_id": 18},
-    "20": {"subpart_id": 5, "condition_id": 19},
-    "21": {"subpart_id": 5, "condition_id": 20},
-    "22": {"subpart_id": 5, "condition_id": 21},
-    "23": {"subpart_id": 6, "condition_id": 22}
+    "2": {"subpart_id": 2, "condition_id": 2},
+    "3": {"subpart_id": 2, "condition_id": 10},
+    "4": {"subpart_id": 2, "condition_id": 11},
+    "5": {"subpart_id": 2, "condition_id": 1},
+    "6": {"subpart_id": 3, "condition_id": 4},
+    "7": {"subpart_id": 3, "condition_id": 5},
+    "8": {"subpart_id": 3, "condition_id": 6},
+    "9": {"subpart_id": 4, "condition_id": 7},
+    "10": {"subpart_id": 4, "condition_id": 8},
+    "11": {"subpart_id": 4, "condition_id": 9},
+    "12": {"subpart_id": 4, "condition_id": 10},
+    "13": {"subpart_id": 4, "condition_id": 11},
+    "14": {"subpart_id": 4, "condition_id": 12},
+    "15": {"subpart_id": 4, "condition_id": 13},
+    "16": {"subpart_id": 4, "condition_id": 14},
+    "17": {"subpart_id": 4, "condition_id": 15},
+    "18": {"subpart_id": 5, "condition_id": 16},
+    "19": {"subpart_id": 5, "condition_id": 17},
+    "20": {"subpart_id": 5, "condition_id": 18},
+    "21": {"subpart_id": 5, "condition_id": 19},
+    "22": {"subpart_id": 5, "condition_id": 20},
+    "23": {"subpart_id": 5, "condition_id": 21},
+    "24": {"subpart_id": 6, "condition_id": 22},
+
+}
+
+
+CONDITION_SYMPTOM_RELATION = {
+    "1": {"condition_id": 1, "symptom_id": 1},
+    "2": {"subpart_id": 1, "symptom_id": 6},
+    "3": {"subpart_id": 2, "symptom_id": 1},
+    "4": {"subpart_id": 2, "symptom_id": 2},
+    "5": {"subpart_id": 2, "symptom_id": 3},
+    "6": {"subpart_id": 2, "symptom_id": 4},
+    "7": {"subpart_id": 2, "symptom_id": 5},
+    "8": {"subpart_id": 10, "symptom_id": 1},
+    "9": {"subpart_id": 10, "symptom_id": 4},
+    "10": {"subpart_id": 10, "symptom_id": 5},
+    "11": {"subpart_id": 10, "symptom_id": 6},
+    "12": {"subpart_id": 10, "symptom_id": 7},
+    "13": {"subpart_id": 10, "symptom_id": 8},
+    "14": {"subpart_id": 10, "symptom_id": 9},
+    "15": {"subpart_id": 10, "symptom_id": 10},
+    "16": {"subpart_id": 11, "symptom_id": 1},
+    "17": {"subpart_id": 11, "symptom_id": 5},
+    "18": {"subpart_id": 11, "symptom_id": 8},
+    "19": {"subpart_id": 11, "symptom_id": 10},
+    "20": {"subpart_id": 11, "symptom_id": 11},
+    "21": {"subpart_id": 11, "symptom_id": 12},
+
+}
+
+CONDITION_SUGGESTION_RELATION = {
+    "1": {"condition_id": 1, "suggestion_id": 1},
+    "2": {"subpart_id": 1, "suggestion_id": 2},
+    "3": {"subpart_id": 1, "suggestion_id": 3},
+    "4": {"subpart_id": 1, "suggestion_id": 4},
+    "5": {"subpart_id": 2, "suggestion_id": 5},
+    "6": {"subpart_id": 2, "suggestion_id": 6},
+    "7": {"subpart_id": 2, "suggestion_id": 7},
+    "8": {"subpart_id": 2, "suggestion_id": 8},
+    "9": {"subpart_id": 10, "suggestion_id": 9},
+    "10": {"subpart_id": 10, "suggestion_id": 10},
+    "11": {"subpart_id": 10, "suggestion_id": 11},
+    "12": {"subpart_id": 10, "suggestion_id": 7},
+    "13": {"subpart_id": 11, "suggestion_id": 7},
+    "14": {"subpart_id": 11, "suggestion_id": 11},
+    "15": {"subpart_id": 11, "suggestion_id": 10},
+    "16": {"subpart_id": 11, "suggestion_id": 9}
 
 }
 
 SYMPTOMS = {
+
+    "1": {"name": "Swelling", "active": True},
+    "2": {"name": "Difficulty Extending Knee", "active": True},
+    "3": {"name": "Difficulty Walking", "active": True},
+    "4": {"name": "Limited Range of Motion", "active": True},
+    "5": {"name": "Stiffness", "active": True},
+    "6": {"name": "Pain Increases When Active", "active": True},
+    "7": {"name": "Pain Decreases When Resting", "active": True},
+    "8": {"name": "Feeling Warmth of Joint", "active": True},
+    "9": {"name": "Crackly Sound When Moving Knee", "active": True},
+    "10": {"name": "Tenderness", "active": True},
+    "11": {"name": "Fatigue", "active": True},
+    "12": {"name": "Weakness", "active": True},
+    "13": {"name": "Pain Sensation of Pins and Needles", "active": True}
+
+
 
 }
 
