@@ -81,26 +81,24 @@ BODY_SUBPARTS = {
 CONDITIONS = {
     "1": {"name": "Illotial Band Syndrome (ITBS)", "active": True, "description": "A painful condition in which connective tissue rubs against the thighbone."},
     "2": {"name": "Meniscus Tear", "active": True, "description": "A common injury in which forceful twisting causes certain tissue in the knee to tear."},
-    "3": {"name": "Arthritis", "active": True, "description": ""},
-    "4": {"name": "Osgood-Schlatter Disease", "active": True, "description": "A childhood repetitive use injury that causes a painful lump below the kneecap."},
-    "5": {"name": "Jumper's Knee (Patellar Tendonitis)", "active": True, "description": "An injury to the tissue connecting the kneecap to the shin bone (patellar tendon)."},
-    "6": {"name": "Patellofermoral Instability", "active": True, "description": ""},
-    "7": {"name": "ACL Tear", "active": True, "description": ""},
-    "8": {"name": "PCL Tear", "active": True, "description": ""},
-    "9": {"name": "MCL Injury", "active": True, "description": ""},
-    "10": {"name": "Osteoarthritis", "active": True, "description": "A type of arthritis that occurs when flexible tissue at the ends of bones wears down."},
-    "11": {"name": "Rheumatoid Arthritis", "active": True, "description": "A chronic inflammatory disorder affecting many joints, including those in the hands and feet."},
-    "12": {"name": "Pes Anserine Bursitis", "active": True, "description": ""},
-    "13": {"name": "Medial Plica Irritation", "active": True, "description": ""},
-    "14": {"name": "Knee Contusion", "active": True, "description": ""},
-    "15": {"name": "Medial Meniscus Injury", "active": True, "description": ""},
-    "16": {"name": "Runner's Knee (Chondromalacia Patellae)", "active": True, "description": ""},
-    "17": {"name": "Prepatellar Bursitis", "active": True, "description": ""},
-    "18": {"name": "Patellar Subluxation", "active": True, "description": ""},
-    "19": {"name": "Kneecap Dislocation", "active": True, "description": ""},
-    "20": {"name": "Patellar Tendon Tear", "active": True, "description": ""},
-    "21": {"name": "Patellofermoral Pain Syndrome", "active": True, "description": ""},
-    "22": {"name": "Quadriceps Tendonitis", "active": True, "description": ""}
+    "3": {"name": "Osgood-Schlatter Disease", "active": True, "description": "A childhood repetitive use injury that causes a painful lump below the kneecap."},
+    "4": {"name": "Jumper's Knee (Patellar Tendonitis)", "active": True, "description": "An injury to the tissue connecting the kneecap to the shin bone (patellar tendon)."},
+    "5": {"name": "Patellofermoral Pain Syndrome", "active": True, "description": "A condition in which the cartilage under the kneecap is damaged due to injury or overuse."},
+    "6": {"name": "ACL Injury", "active": True, "description": ""},
+    "7": {"name": "PCL Injury", "active": True, "description": ""},
+    "8": {"name": "MCL Injury", "active": True, "description": ""},
+    "9": {"name": "Osteoarthritis", "active": True, "description": "A type of arthritis that occurs when flexible tissue at the ends of bones wears down."},
+    "10": {"name": "Rheumatoid Arthritis", "active": True, "description": "A chronic inflammatory disorder affecting many joints, including those in the hands and feet."},
+    "11": {"name": "Pes Anserine Bursitis", "active": True, "description": ""},
+    "12": {"name": "Medial Plica Irritation", "active": True, "description": ""},
+    "13": {"name": "Knee Contusion", "active": True, "description": ""},
+    "14": {"name": "Medial Meniscus Injury", "active": True, "description": ""},
+    "15": {"name": "Runner's Knee (Chondromalacia Patellae)", "active": True, "description": ""},
+    "16": {"name": "Prepatellar Bursitis", "active": True, "description": ""},
+    "17": {"name": "Patellar Subluxation", "active": True, "description": ""},
+    "18": {"name": "Kneecap Dislocation", "active": True, "description": ""},
+    "19": {"name": "Patellar Tendon Tear", "active": True, "description": ""},
+    "20": {"name": "Quadriceps Tendonitis", "active": True, "description": ""}
 
 
 }
@@ -109,28 +107,28 @@ CONDITIONS = {
 SUBPARTS_CONDITION_RELATION = {
     "1": {"subpart_id": 1, "condition_id": 1},
     "2": {"subpart_id": 2, "condition_id": 2},
-    "3": {"subpart_id": 2, "condition_id": 10},
-    "4": {"subpart_id": 2, "condition_id": 11},
+    "3": {"subpart_id": 2, "condition_id": 9},
+    "4": {"subpart_id": 2, "condition_id": 10},
     "5": {"subpart_id": 2, "condition_id": 1},
-    "6": {"subpart_id": 3, "condition_id": 4},
-    "7": {"subpart_id": 3, "condition_id": 5},
-    "8": {"subpart_id": 3, "condition_id": 6},
-    "9": {"subpart_id": 4, "condition_id": 7},
-    "10": {"subpart_id": 4, "condition_id": 8},
-    "11": {"subpart_id": 4, "condition_id": 9},
-    "12": {"subpart_id": 4, "condition_id": 10},
-    "13": {"subpart_id": 4, "condition_id": 11},
-    "14": {"subpart_id": 4, "condition_id": 12},
-    "15": {"subpart_id": 4, "condition_id": 13},
-    "16": {"subpart_id": 4, "condition_id": 14},
-    "17": {"subpart_id": 4, "condition_id": 15},
-    "18": {"subpart_id": 5, "condition_id": 16},
-    "19": {"subpart_id": 5, "condition_id": 17},
-    "20": {"subpart_id": 5, "condition_id": 18},
-    "21": {"subpart_id": 5, "condition_id": 19},
-    "22": {"subpart_id": 5, "condition_id": 20},
-    "23": {"subpart_id": 5, "condition_id": 21},
-    "24": {"subpart_id": 6, "condition_id": 22},
+    "6": {"subpart_id": 3, "condition_id": 3},
+    "7": {"subpart_id": 3, "condition_id": 4},
+    "8": {"subpart_id": 3, "condition_id": 5},
+    "9": {"subpart_id": 4, "condition_id": 6},
+    "10": {"subpart_id": 4, "condition_id": 7},
+    "11": {"subpart_id": 4, "condition_id": 8},
+    "12": {"subpart_id": 4, "condition_id": 9},
+    "13": {"subpart_id": 4, "condition_id": 10},
+    "14": {"subpart_id": 4, "condition_id": 11},
+    "15": {"subpart_id": 4, "condition_id": 12},
+    "16": {"subpart_id": 4, "condition_id": 13},
+    "17": {"subpart_id": 4, "condition_id": 14},
+    "18": {"subpart_id": 5, "condition_id": 15},
+    "19": {"subpart_id": 5, "condition_id": 16},
+    "20": {"subpart_id": 5, "condition_id": 17},
+    "21": {"subpart_id": 5, "condition_id": 18},
+    "22": {"subpart_id": 5, "condition_id": 19},
+    "23": {"subpart_id": 5, "condition_id": 5},
+    "24": {"subpart_id": 6, "condition_id": 20},
 
 }
 
@@ -143,20 +141,30 @@ CONDITION_SYMPTOM_RELATION = {
     "5": {"condition_id": 2, "symptom_id": 3},
     "6": {"condition_id": 2, "symptom_id": 4},
     "7": {"condition_id": 2, "symptom_id": 5},
-    "8": {"condition_id": 10, "symptom_id": 1},
-    "9": {"condition_id": 10, "symptom_id": 4},
-    "10": {"condition_id": 10, "symptom_id": 5},
-    "11": {"condition_id": 10, "symptom_id": 6},
-    "12": {"condition_id": 10, "symptom_id": 7},
-    "13": {"condition_id": 10, "symptom_id": 8},
-    "14": {"condition_id": 10, "symptom_id": 9},
-    "15": {"condition_id": 10, "symptom_id": 10},
-    "16": {"condition_id": 11, "symptom_id": 1},
-    "17": {"condition_id": 11, "symptom_id": 5},
-    "18": {"condition_id": 11, "symptom_id": 8},
-    "19": {"condition_id": 11, "symptom_id": 10},
-    "20": {"condition_id": 11, "symptom_id": 11},
-    "21": {"condition_id": 11, "symptom_id": 12},
+    "8": {"condition_id": 9, "symptom_id": 1},
+    "9": {"condition_id": 9, "symptom_id": 4},
+    "10": {"condition_id": 9, "symptom_id": 5},
+    "11": {"condition_id": 9, "symptom_id": 6},
+    "12": {"condition_id": 9, "symptom_id": 7},
+    "13": {"condition_id": 9, "symptom_id": 8},
+    "14": {"condition_id": 9, "symptom_id": 9},
+    "15": {"condition_id": 9, "symptom_id": 10},
+    "16": {"condition_id": 10, "symptom_id": 1},
+    "17": {"condition_id": 10, "symptom_id": 5},
+    "18": {"condition_id": 10, "symptom_id": 8},
+    "19": {"condition_id": 10, "symptom_id": 10},
+    "20": {"condition_id": 10, "symptom_id": 11},
+    "21": {"condition_id": 10, "symptom_id": 12},
+    "22": {"condition_id": 3, "symptom_id": 14},
+    "23": {"condition_id": 3, "symptom_id": 15},
+    "25": {"condition_id": 4, "symptom_id": 5},
+    "26": {"condition_id": 4, "symptom_id": 15},
+    "27": {"condition_id": 4, "symptom_id": 10},
+    "28": {"condition_id": 4, "symptom_id": 3},
+    "29": {"condition_id": 5, "symptom_id": 12},
+    "30": {"condition_id": 5, "symptom_id": 5},
+    "31": {"condition_id": 5, "symptom_id": 16},
+    "32": {"condition_id": 5, "symptom_id": 17},
 
 }
 
@@ -169,14 +177,29 @@ CONDITION_SUGGESTION_RELATION = {
     "6": {"condition_id": 2, "suggestion_id": 6},
     "7": {"condition_id": 2, "suggestion_id": 7},
     "8": {"condition_id": 2, "suggestion_id": 8},
-    "9": {"condition_id": 10, "suggestion_id": 9},
-    "10": {"condition_id": 10, "suggestion_id": 10},
-    "11": {"condition_id": 10, "suggestion_id": 11},
-    "12": {"condition_id": 10, "suggestion_id": 7},
-    "13": {"condition_id": 11, "suggestion_id": 7},
-    "14": {"condition_id": 11, "suggestion_id": 11},
-    "15": {"condition_id": 11, "suggestion_id": 10},
-    "16": {"condition_id": 11, "suggestion_id": 9}
+    "9": {"condition_id": 9, "suggestion_id": 9},
+    "10": {"condition_id": 9, "suggestion_id": 10},
+    "11": {"condition_id": 9, "suggestion_id": 11},
+    "12": {"condition_id": 9, "suggestion_id": 7},
+    "13": {"condition_id": 10, "suggestion_id": 7},
+    "14": {"condition_id": 10, "suggestion_id": 11},
+    "15": {"condition_id": 10, "suggestion_id": 10},
+    "16": {"condition_id": 10, "suggestion_id": 9},
+    "17": {"condition_id": 3, "suggestion_id": 8},
+    "18": {"condition_id": 3, "suggestion_id": 7},
+    "19": {"condition_id": 3, "suggestion_id": 12},
+    "20": {"condition_id": 3, "suggestion_id": 13},
+    "21": {"condition_id": 4, "suggestion_id": 14},
+    "22": {"condition_id": 4, "suggestion_id": 12},
+    "23": {"condition_id": 4, "suggestion_id": 15},
+    "24": {"condition_id": 4, "suggestion_id": 13},
+    "25": {"condition_id": 5, "suggestion_id": 14},
+    "26": {"condition_id": 5, "suggestion_id": 12},
+    "27": {"condition_id": 5, "suggestion_id": 15},
+    "28": {"condition_id": 5, "suggestion_id": 9},
+
+
+
 
 }
 
@@ -280,6 +303,39 @@ SUGGESTIONS = {
                                                        "support, elevate your leg until you feel a gentle stretch at "
                                                        "the back of you knee and thigh. Hold for up to 30 seconds. "
                                                        "Slowly lower. Perform 3 repetitions, 1 time daily.",
-          "link": "https://www.youtube.com/embed/Dqfs4TraGjc", "video_start": 38, "video_end": 78, "active": True}
+          "link": "https://www.youtube.com/embed/Dqfs4TraGjc", "video_start": 38, "video_end": 78, "active": True},
+    "12": {"name": "Quadricep Stretch", "description": "Stand at an arm's length away from the wall with your injured "
+                                                       "side farthest from the wall. Facing straight ahead, brace "
+                                                       "yourself by keeping one hand against the wall. With your other "
+                                                       "hand, grasp the ankle on your injured side and pull your heel "
+                                                       "toward your buttocks. Don't arch or twist your back. Keep your "
+                                                       "knees together. Hold this stretch for 15 to 30 seconds.",
+           "link": "https://www.youtube.com/embed/CZBKSOtyssM", "video_start": 0, "video_end": 55, "active": True},
+    "13": {"name": "Rectus Femoris Stretch", "description": "Kneel on your injured knee on a padded surface. Place "
+                                                            "your other leg in front of you with your foot flat on the "
+                                                            "floor. Keep your head and chest facing forward and upright"
+                                                            " and grab the ankle behind you. Gently bring your ankle "
+                                                            "back toward your buttocks until you feel a stretch in the "
+                                                            "front of your thigh. Hold 15 to 30 seconds. Repeat 2 to 3 "
+                                                            "times.",
+           "link": "https://www.youtube.com/embed/BhQimqvU1tM", "video_start": 108, "video_end": 162, "active": True},
+    "14": {"name": "Standing Hamstring Stretch", "description": "Put the heel of the leg on your injured side on a "
+                                                                "stool about 15 inches high. Keep your leg straight. "
+                                                                "Lean forward, bending at the hips, until you feel a "
+                                                                "mild stretch in the back of your thigh. Make sure you "
+                                                                "don't roll your shoulders or bend at the waist when "
+                                                                "doing this or you will stretch your lower back instead "
+                                                                "of your leg. Hold the stretch for 15 to 30 seconds. "
+                                                                "Repeat 3 times.",
+           "link": "https://www.youtube.com/embed/6vxpOglpLfY", "video_start": 19, "video_end": 77, "active": True},
+    "15": {"name": "Side-lying Leg Lift", "description": "Lie on your uninjured side. Tighten the front thigh muscles "
+                                                         "on your injured leg and lift that leg 8 to 10 inches "
+                                                         "(20 to 25 centimeters) away from the other leg. "
+                                                         "Keep the leg straight and lower it slowly. Do 2 sets of 15.",
+           "link": "https://www.youtube.com/embed/Dha6wZbFLbY", "video_start": 0, "video_end": 71, "active": True},
+
+
+
+
 
 }

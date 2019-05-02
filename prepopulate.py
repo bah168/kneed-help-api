@@ -38,8 +38,6 @@ def seed():
     try:
         body_subparts = app.config.get("BODY_SUBPARTS")
         body_subparts_model = get_class_by_tablename("subparts")
-        relationship = app.config.get("SUBPARTS_CONDITION_RELATION")
-        conditions_model = get_class_by_tablename("conditions")
 
         current_records = body_subparts_model.query.all()
 
@@ -62,10 +60,6 @@ def seed():
                                            active=value['active'],
                                            body_part_id=value['body_part_id']
                                            )
-        for key, value in relationship.items():
-            subpart = body_subparts_model.query.filter(body_subparts_model.id == value['subpart_id']).first()
-            condition = conditions_model.query.filter(conditions_model.id == value['condition_id']).first()
-            subpart.conditions.append(condition)
         try:
             body_subparts_model.session.commit()
         except IntegrityError as err:
@@ -75,6 +69,76 @@ def seed():
         body_subparts_model.session.rollback()
         print(e)
         print('Subparts records already exist in database.')
+
+
+    try:
+        symptoms = app.config.get("SYMPTOMS")
+        symptoms_model = get_class_by_tablename("symptoms")
+
+        current_records = symptoms_model.query.all()
+
+        if current_records:
+            for key, value in symptoms.items():
+                if not symptoms_model.find(key):
+                    symptoms_model.create(id=key,
+                                            name=value['name'],
+                                            active=value['active']
+                                            )
+
+        else:
+            for key, value in symptoms.items():
+                symptoms_model.create(id=key,
+                                        name=value['name'],
+                                        active=value['active']
+                                        )
+        try:
+            symptoms_model.session.commit()
+        except IntegrityError as err:
+            print("Error seeding the database: ", err)
+
+    except Exception as e:
+        symptoms_model.session.rollback()
+        print(e)
+        print('Symptom records already exist in database.')
+
+
+    try:
+        suggestions = app.config.get("SUGGESTIONS")
+        suggestions_model = get_class_by_tablename("suggestions")
+
+        current_records = suggestions_model.query.all()
+
+        if current_records:
+            for key, value in suggestions.items():
+                if not suggestions_model.find(key):
+                    suggestions_model.create(id=key,
+                                             name=value['name'],
+                                             active=value['active'],
+                                             description=value['description'],
+                                             link=value['link'],
+                                             video_start=value['video_start'],
+                                             video_end=value['video_end']
+                                            )
+
+        else:
+            for key, value in suggestions.items():
+                suggestions_model.create(id=key,
+                                         name=value['name'],
+                                         active=value['active'],
+                                         description=value['description'],
+                                         link=value['link'],
+                                         video_start=value['video_start'],
+                                         video_end=value['video_end']
+                                         )
+        try:
+            suggestions_model.session.commit()
+        except IntegrityError as err:
+            print("Error seeding the database: ", err)
+
+    except Exception as e:
+        suggestions_model.session.rollback()
+        print(e)
+        print('Suggestion records already exist in database.')
 
     try:
         conditions = app.config.get("CONDITIONS")
@@ -108,10 +172,10 @@ def seed():
             symptom = symptoms_model.query.filter(symptoms_model.id == value['symptom_id']).first()
             condition.symptoms.append(symptom)
 
-        for key, value in suggestion_relation.items():
-            condition = conditions_model.query.filter(conditions_model.id == value['condition_id']).first()
-            suggestion = suggestions_model.query.filter(suggestions_model.id == value['suggestion_id']).first()
-            condition.suggestions.append(suggestion)
+        # for key, value in suggestion_relation.items():
+        #     condition = conditions_model.query.filter(conditions_model.id == value['condition_id']).first()
+        #     suggestion = suggestions_model.query.filter(suggestions_model.id == value['suggestion_id']).first()
+        #     condition.suggestions.append(suggestion)
 
         try:
             conditions_model.session.commit()
@@ -123,77 +187,25 @@ def seed():
         print(e)
         print('Condition records already exist in database.')
 
-
     try:
-        symptoms = app.config.get("SYMPTOMS")
-        symptoms_model = get_class_by_tablename("symptoms")
+        body_subparts_model = get_class_by_tablename("subparts")
+        relationship = app.config.get("SUBPARTS_CONDITION_RELATION")
+        conditions_model = get_class_by_tablename("conditions")
 
-        current_records = symptoms_model.query.all()
-
-        if current_records:
-            for key, value in symptoms.items():
-                if not symptoms_model.find(key):
-                    symptoms_model.create(id=key,
-                                            name=value['name'],
-                                            active=value['active'],
-                                            description=value['description']
-                                            )
-
-        else:
-            for key, value in symptoms.items():
-                symptoms_model.create(id=key,
-                                        name=value['name'],
-                                        active=value['active'],
-                                        description=value['description']
-                                        )
+        for key, value in relationship.items():
+            subpart = body_subparts_model.query.filter(body_subparts_model.id == value['subpart_id']).first()
+            condition = conditions_model.query.filter(conditions_model.id == value['condition_id']).first()
+            subpart.conditions.append(condition)
         try:
-            symptoms_model.session.commit()
+            body_subparts_model.session.commit()
         except IntegrityError as err:
             print("Error seeding the database: ", err)
 
     except Exception as e:
-        symptoms_model.session.rollback()
+        body_subparts_model.session.rollback()
         print(e)
-        print('Symptom records already exist in database.')
+        print('Subparts Relation records already exist in database.')
 
-
-    try:
-        suggestions = app.config.get("SYMPTOMS")
-        suggestions_model = get_class_by_tablename("symptoms")
-
-        current_records = symptoms_model.query.all()
-
-        if current_records:
-            for key, value in suggestions.items():
-                if not suggestions_model.find(key):
-                    suggestions_model.create(id=key,
-                                             name=value['name'],
-                                             active=value['active'],
-                                             description=value['description'],
-                                             link=value['link'],
-                                             video_start=value['video_start'],
-                                             video_end=value['video_end']
-                                            )
-
-        else:
-            for key, value in suggestions.items():
-                suggestions_model.create(id=key,
-                                         name=value['name'],
-                                         active=value['active'],
-                                         description=value['description'],
-                                         link=value['link'],
-                                         video_start=value['video_start'],
-                                         video_end=value['video_end']
-                                         )
-        try:
-            suggestions_model.session.commit()
-        except IntegrityError as err:
-            print("Error seeding the database: ", err)
-
-    except Exception as e:
-        suggestions_model.session.rollback()
-        print(e)
-        print('Suggestion records already exist in database.')
 
 
 if __name__ == '__main__':
