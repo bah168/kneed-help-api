@@ -56,8 +56,9 @@ KNEED_HELP_MODULE_ROUTES = {
     "ContactUs": {
         "url": "/api/contact_us",
         "methods": {
-            "POST": "send contact email"
+            "POST": "posting email"
         }
+
     }
 }
 

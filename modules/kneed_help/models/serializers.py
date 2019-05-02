@@ -2,9 +2,9 @@ from modules.extensions import ma
 from .body import PartOfBodyModel
 from .subparts import SubpartsModel
 from .symptoms import SymptomsModel
-from .conditions import ConditionsModel
 from .results import ResultsModel
 from .suggestions import SuggestionsModel
+from .conditions import ConditionsModel
 from marshmallow_sqlalchemy import ModelSchema
 
 
@@ -16,6 +16,10 @@ class BodyPartSchema(ModelSchema):
 class BodySubpartSchema(ModelSchema):
     class Meta:
         model = SubpartsModel
+        
+class ConditionsSchema(ModelSchema): 
+    class Meta:
+        model = ConditionsModel
 
 
 class SymptomsSchema(ModelSchema):
@@ -45,3 +49,4 @@ conditions_schema = ConditionsSchema(many=True)
 condition_schema = ConditionsSchema()
 results_schema = ResultsSchema(many=True)
 suggestions_schema = SuggestionsSchema(many=True)
+
