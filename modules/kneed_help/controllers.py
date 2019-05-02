@@ -2,7 +2,7 @@ from flask_restful import Resource, reqparse
 from flask import jsonify, send_from_directory, current_app, abort
 from .models.serializers import body_parts_schema, body_subparts_schema, body_part_schema, symptoms_schema, \
     results_schema, condition_schema, suggestions_schema
-from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel, ContactModel
+from .models import PartOfBodyModel, SubpartsModel, SymptomsModel, ConditionsModel, ResultsModel
 from sqlalchemy_pagination import paginate
 from sqlalchemy.exc import DatabaseError
 from flask_mail import Message

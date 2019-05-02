@@ -77,16 +77,5 @@ class SuggestionView(BaseView):
     form_edit_rules = ('name', 'description', 'link', 'video_start', 'video_end', 'conditions', 'active')
     column_labels = dict(video_start='Video Start Time (sec)', video_end='Video End Time (sec)')
 
-class ContactView(ModelView):
-    can_create = False
-    can_delete = False
-    can_edit = False
-    column_editable_list = ['email']
 
-
-    def is_accessible(self):
-        if not current_user.is_active or not current_user.is_authenticated:
-            return False
-        else:
-            return True
 
